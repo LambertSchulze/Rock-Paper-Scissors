@@ -68,8 +68,13 @@ buttons.forEach((button) => {
     
         score.textContent = "Player-Computer: "+playerScore.toString()+"-"+computerScore.toString();
 
-        if (computerScore == 5 || playerScore == 5) {
-            message.textContent = "We got a Winner!";
+        if (computerScore == 5) {
+            message.textContent = "Computer won the game!";
+            playerScore = 0;
+            computerScore = 0;
+        }
+        else if (playerScore == 5) {
+            message.textContent = "Player won the game!";
             playerScore = 0;
             computerScore = 0;
         }
