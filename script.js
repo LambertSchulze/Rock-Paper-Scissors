@@ -45,7 +45,7 @@ function playRound(playerSelection, computerSelection) {
         console.log("Error. This state should not happen\n" +
                 "Player: {playerState}\n" +
                 "Computer: {computerState}");
-    
+    }
 }
 
 function game() {
@@ -67,7 +67,7 @@ function game() {
         else if (roundWinner == "computer") computerScore++;
         
     }
-
-    console.log("You have won {playerScore} Rounds.");
-    console.log("The computer won {computerScore} Rounds.");
 }
+
+console.log("You have won {playerScore} Rounds.");
+console.log("The computer won {computerScore} Rounds.");
