@@ -48,26 +48,26 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    let playerScore   = 0;
-    let computerScore = 0;
+
+let playerScore   = 0;
+let computerScore = 0;
+let computerSelection = computerPlay();
+let roundWinner;
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        //alert(button.id);
     
-    var i;
-    for (i = 0; i < 5; i++) {
-        let playerSelection   = null;
-        let computerSelection = computerPlay();
-        
-        while (playerSelection = !window.prompt("Do you choose 'Rock', 'Paper' or 'Scissors'?")) {
-            console.log("Please choose one of the three");
-        }
+        if      (button.id == 'rock')     roundWinner = playRound('rock', computerSelection);
+        else if (button.id == 'paper')    roundWinner = playRound('paper', computerSelection);
+        else if (button.id == 'scissors') roundWinner = playRound('scissors', computerSelection);
+    });
+});
 
-        let roundWinner = playRound();
+if      (roundWinner == "player")   playerScore++;
+else if (roundWinner == "computer") computerScore++;
 
-        if      (roundWinner == "player")   playerScore++;
-        else if (roundWinner == "computer") computerScore++;
-        
-    }
-}
 
 console.log("You have won {playerScore} Rounds.");
 console.log("The computer won {computerScore} Rounds.");
