@@ -70,6 +70,3 @@ buttons.forEach((button) => {
     });
 });
 
-if      (roundWinner == "player")   playerScore++;
-else if (roundWinner == "computer") computerScore++;
-
