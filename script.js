@@ -67,6 +67,12 @@ buttons.forEach((button) => {
         else if (roundWinner == "computer") computerScore++;
     
         score.textContent = "Player-Computer: "+playerScore.toString()+"-"+computerScore.toString();
+
+        if (computerScore == 5 || playerScore == 5) {
+            message.textContent = "We got a Winner!";
+            playerScore = 0;
+            computerScore = 0;
+        }
     });
 });
 
