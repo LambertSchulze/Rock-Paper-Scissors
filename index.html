@@ -17,6 +17,7 @@
 		.button {
 			padding: 1em;
 			margin: 0 1.2em;
+			min-width: 4em;
 
 			border: none;
 			border-radius: 22px;
@@ -24,18 +25,36 @@
 			box-shadow:  7px 7px 14px #636663, 
              			-7px -7px 14px #ffffff;
 			font-size: xx-large;
+		
+			transition: all .12s ease-in-out;
 		}
 		.button:active {
 			background: linear-gradient(145deg, #dfe6df, #ffffff);
+		}
+		.button:hover {
+			transform: scale(1.05);
+		}
+		span {
+			display: block;
+			font-size: small;
 		}
 	</style>
 	
 	<body>
 		<div id="score">Player-Computer: 0-0</div>
 		<div class="player_selection">
-			<button id="rock" class="button">✊</button>
-			<button id="paper" class="button">✋</button>
-			<button id="scissors" class="button">✌️</button>
+			<button id="rock" class="button">
+				✊
+				<span>Rock</span>
+			</button>
+			<button id="paper" class="button">
+				✋
+				<span>Paper</span>
+			</button>
+			<button id="scissors" class="button">
+				✌️
+				<span>Scissors</span>
+			</button>
 		</div>
 		<div id="message">
 			Click on one of the three buttons to start a game.<br>
