@@ -1,6 +1,7 @@
 function computerPlay() {
     let picklist = ["rock", "paper", "scissors"];
-    return picklist[0];
+    let computerChoice = Math.floor(Math.random() * Math.floor(3));
+    return picklist[computerChoice];
 }
 
 function playRound(playerSelection, computerSelection) {
