@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Rock-Paper-Scissors</title>
 	</head>
+
+	<style>
+		body {
+			background-color: #f8fff8;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: xx-large;
+			text-align: center;
+		}
+		div {
+			margin-top: 3em;;
+		}
+		.button {
+			padding: 1em;
+			margin: 0 1.2em;
+
+			border: none;
+			border-radius: 22px;
+			background: linear-gradient(145deg, #ffffff, #dfe6df);
+			box-shadow:  7px 7px 14px #636663, 
+             			-7px -7px 14px #ffffff;
+			font-size: xx-large;
+		}
+		.button:active {
+			background: linear-gradient(145deg, #dfe6df, #ffffff);
+			}
+	</style>
 	
 	<body>
+		<div id="score">Player-Computer: 0-0</div>
 		<div class="player_selection">
-			<button id="rock">Rock</button>
-			<button id="paper">Paper</button>
-			<button id="scissors">Sissors</button>
+			<button id="rock" class="button">✊</button>
+			<button id="paper" class="button">✋</button>
+			<button id="scissors" class="button">✌️</button>
 		</div>
 		<div id="message">
 			Click on one of the three buttons to start a game.<br>
 			First to get to 5 points wins the game.
 		</div>
-		<div id="score">Player-Computer: 0-0</div>
 	</body>
 
 	<script src="script.js"></script>

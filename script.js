@@ -12,32 +12,32 @@ function playRound(playerSelection, computerSelection) {
     }
     else if (playerSelection   == "rock" &&
         computerSelection == "paper") {
-        message.textContent = "Computer chose 'Paper': You loose.";
+        message.textContent = "Computer chose ✋: You loose.";
         return "computer";
     }
     else if (playerSelection   == "rock" &&
         computerSelection == "scissors") {
-        message.textContent = "Computer chose 'Scissors': This round goes to you!";
+        message.textContent = "Computer chose ✌️: This round goes to you!";
         return "player";
     }
     else if (playerSelection   == "paper" &&
         computerSelection == "rock") {
-        message.textContent = "Computer chose 'Rock': This round goes to you!";
+        message.textContent = "Computer chose ✊: This round goes to you!";
         return "player";
     }
     else if (playerSelection   == "paper" &&
         computerSelection == "scissors") {
-        message.textContent = "Computer chose 'Scissors': You loose.";
+        message.textContent = "Computer chose ✌️: You loose.";
         return "computer";
     }
     else if (playerSelection   == "scissors" &&
         computerSelection == "rock") {
-        message.textContent = "Computer chose 'Rock': You loose.";
+        message.textContent = "Computer chose ✊: You loose.";
         return "computer";
     }
     else if (playerSelection   == "scissors" &&
         computerSelection == "paper") {
-        message.textContent = "Computer chose 'Paper': This round goes to you!";
+        message.textContent = "Computer chose ✋: This round goes to you!";
         return "player";
     }
     else {
