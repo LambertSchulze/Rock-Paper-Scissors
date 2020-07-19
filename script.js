@@ -4,7 +4,6 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-
     playerSelection = playerSelection.toLowerCase();
 
     if (playerSelection == computerSelection) {
@@ -45,39 +44,41 @@ function playRound(playerSelection, computerSelection) {
         message.textContent = "Error. This state should not happen\n";
     }
 }
+
+function givePoints(roundWinner) {
+    if      (roundWinner == "player")   playerScore++;
+    else if (roundWinner == "computer") computerScore++;
+    
+    score.textContent = "Player-Computer: "+playerScore.toString()+"-"+computerScore.toString();
+}
+
+function declareWinnerAndStartNewGame(Winner) {
+    message.textContent = Winner + " won the game!";
+    playerScore = 0;
+    computerScore = 0;
+}
+
+const buttons = document.querySelectorAll('button');
 const message = document.querySelector('#message');
 const score =   document.querySelector('#score');
 
-score.textContent = "Player-Computer: 0-0";
-
-
 let playerScore   = 0;
 let computerScore = 0;
-let computerSelection = computerPlay();
+let computerSelection;
 let roundWinner;
 
-const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
-    button.addEventListener('click', () => {    
+    button.addEventListener('click', () => {
+        computerSelection = computerPlay();
+
         if      (button.id == 'rock')     roundWinner = playRound('rock', computerSelection);
         else if (button.id == 'paper')    roundWinner = playRound('paper', computerSelection);
         else if (button.id == 'scissors') roundWinner = playRound('scissors', computerSelection);
 
-        if      (roundWinner == "player")   playerScore++;
-        else if (roundWinner == "computer") computerScore++;
-    
-        score.textContent = "Player-Computer: "+playerScore.toString()+"-"+computerScore.toString();
+        givePoints(roundWinner);
 
-        if (computerScore == 5) {
-            message.textContent = "Computer won the game!";
-            playerScore = 0;
-            computerScore = 0;
-        }
-        else if (playerScore == 5) {
-            message.textContent = "Player won the game!";
-            playerScore = 0;
-            computerScore = 0;
-        }
+        if      (computerScore == 5)    declareWinnerAndStartNewGame("Computer");
+        else if (playerScore == 5)      declareWinnerAndStartNewGame("Computer");
     });
 });
 
