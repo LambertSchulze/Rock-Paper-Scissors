@@ -79,7 +79,7 @@ buttons.forEach((button) => {
         givePoints(roundWinner);
 
         if      (computerScore == 5)    declareWinnerAndStartNewGame("Computer");
-        else if (playerScore == 5)      declareWinnerAndStartNewGame("Computer");
+        else if (playerScore == 5)      declareWinnerAndStartNewGame("Player");
     });
 });
 
